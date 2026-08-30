@@ -16,7 +16,7 @@ interface Particle {
 }
 
 const CONFIG = {
-  count: 40,
+  count: typeof window !== "undefined" && window.innerWidth < 768 ? 18 : 40,
   size: [2, 5],
   speed: [0.15, 0.4],
   opacity: [0.08, 0.35],

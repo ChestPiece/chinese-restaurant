@@ -82,7 +82,7 @@ function Tag({ label, color }: { label: string; color: string }) {
 
 function FeaturedDish({ dish }: { dish: (typeof dishes)[0] }) {
   return (
-    <div className="sm:col-span-2 card-lift bg-surface rounded-[1.5rem] overflow-hidden border border-border" data-reveal="fade-up">
+    <div className="sm:col-span-2 min-w-[85vw] sm:min-w-0 scroll-snap-start card-lift bg-surface rounded-[1.5rem] overflow-hidden border border-border" data-reveal="fade-up">
       <div className="grid sm:grid-cols-2">
         <div className="relative aspect-[4/3] overflow-hidden" data-image-reveal>
           <Image
@@ -114,7 +114,7 @@ function FeaturedDish({ dish }: { dish: (typeof dishes)[0] }) {
 
 function RegularDish({ dish }: { dish: (typeof dishes)[0] }) {
   return (
-    <div className="card-lift bg-surface rounded-[1.5rem] overflow-hidden border border-border" data-reveal="fade-up">
+    <div className="min-w-[85vw] sm:min-w-0 scroll-snap-start card-lift bg-surface rounded-[1.5rem] overflow-hidden border border-border" data-reveal="fade-up">
       <div className="relative aspect-[4/3] overflow-hidden" data-image-reveal>
         <Image
           src={dish.image}
@@ -149,8 +149,8 @@ export default function Menu() {
           </h2>
         </div>
 
-        {/* Menu Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7" data-reveal-group>
+        {/* Menu Grid — horizontal scroll on mobile, grid on desktop */}
+        <div className="flex overflow-x-auto scroll-snap-x no-scrollbar sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7 pb-4 sm:pb-0 -mx-6 px-6 sm:mx-0 sm:px-0 scroll-fade-edge" data-reveal-group>
           {dishes.map((dish) =>
             dish.featured ? (
               <FeaturedDish key={dish.name} dish={dish} />

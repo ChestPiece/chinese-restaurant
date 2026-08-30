@@ -49,12 +49,12 @@ export default function Gallery() {
           </h2>
         </div>
 
-        {/* Gallery Grid — asymmetric bento */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4" data-reveal-group>
+        {/* Gallery Grid — asymmetric bento (horizontal scroll on mobile) */}
+        <div className="flex overflow-x-auto scroll-snap-x no-scrollbar sm:grid sm:grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4 scroll-fade-edge" data-reveal-group>
           {images.map((img) => (
             <div
               key={img.src}
-              className={`relative rounded-2xl overflow-hidden ${img.className} ${img.aspect}`}
+              className={`relative min-w-[85vw] sm:min-w-0 scroll-snap-start rounded-2xl overflow-hidden ${img.className} ${img.aspect}`}
               data-reveal-item
             >
               <div data-image-reveal className="w-full h-full">
@@ -63,7 +63,7 @@ export default function Gallery() {
                   alt={img.alt}
                   fill
                   className="object-cover img-zoom"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  sizes="(max-width: 639px) 85vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
               </div>
             </div>

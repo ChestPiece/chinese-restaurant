@@ -8,7 +8,7 @@ export default function Hero() {
     <section
       id="hero"
       aria-labelledby="hero-heading"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden"
     >
       {/* Background Image with Parallax */}
       <div className="absolute inset-0" id="hero-img-container">
@@ -28,7 +28,7 @@ export default function Hero() {
       <AmbientParticles />
 
       {/* Hero Content */}
-      <div id="hero-content" className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+      <div id="hero-content" className="relative z-10 text-center px-5 sm:px-8 max-w-5xl mx-auto">
         <div className="overflow-hidden mb-6" data-reveal="fade-up">
           <p className="text-gold text-[11px] sm:text-xs font-semibold tracking-[0.4em] uppercase" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
             Est. 1986 — San Francisco&apos;s Chinatown
@@ -38,7 +38,7 @@ export default function Hero() {
         <div className="overflow-hidden mb-2" data-reveal="fade-up" data-reveal-delay="0.1">
           <h1
             id="hero-heading"
-            className="font-serif text-5xl sm:text-7xl lg:text-[7rem] font-medium leading-[0.9] tracking-tight text-text hero-heading-shadow"
+            className="font-serif text-4xl sm:text-5xl lg:text-[4rem] font-medium leading-[0.9] tracking-tight text-text hero-heading-shadow"
             data-motion-text="words"
           >
             Golden Dragon
@@ -48,7 +48,7 @@ export default function Hero() {
         <div className="deco-line mx-auto my-8" data-reveal="fade-up" data-reveal-delay="0.2" aria-hidden="true" />
 
         <div className="overflow-hidden mb-12" data-reveal="fade-up" data-reveal-delay="0.3">
-          <p className="text-lg sm:text-xl md:text-2xl text-text-muted font-light max-w-2xl mx-auto leading-relaxed" style={{ textShadow: "0 1px 12px rgba(0,0,0,0.5)" }}>
+          <p className="text-sm sm:text-base lg:text-lg text-text-white font-light max-w-2xl mx-auto leading-relaxed" style={{ textShadow: "0 1px 12px rgba(0,0,0,0.5)" }}>
             Where tradition meets elegance. Multi-regional Chinese cuisine crafted
             from five generations of culinary heritage.
           </p>
@@ -58,7 +58,7 @@ export default function Hero() {
           <a
             href="#menu"
             data-magnetic="0.12"
-            className="group px-9 py-4 bg-accent text-white font-semibold rounded-full hover:bg-accent-hover transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 text-sm tracking-wide flex items-center gap-3"
+            className="group w-full sm:w-auto px-9 py-4 bg-accent text-white font-semibold rounded-full hover:bg-accent-hover transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 text-sm tracking-wide flex items-center justify-center gap-3"
           >
             Explore Our Menu
             <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/15 group-hover:bg-white/20 transition-colors text-xs">
@@ -68,7 +68,7 @@ export default function Hero() {
           <a
             href="#reservations"
             data-magnetic="0.12"
-            className="px-9 py-4 border border-white/15 text-text font-medium rounded-full hover:border-white/30 hover:bg-white/5 transition-all duration-300 text-sm tracking-wide"
+            className="w-full sm:w-auto px-9 py-4 border border-white/15 text-text font-medium rounded-full hover:border-white/30 hover:bg-white/5 transition-all duration-300 text-sm tracking-wide text-center"
           >
             Reserve a Table
           </a>

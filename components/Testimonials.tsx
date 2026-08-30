@@ -45,7 +45,7 @@ export default function Testimonials() {
           </div>
 
           {/* Main testimonial */}
-          <blockquote className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-text-muted italic mb-12 relative z-10">
+          <blockquote className="font-serif text-lg sm:text-xl lg:text-2xl leading-relaxed text-text-muted italic mb-12 relative z-10">
             {testimonials[0].quote}
           </blockquote>
 
@@ -61,14 +61,14 @@ export default function Testimonials() {
         </div>
 
         {/* Secondary testimonials */}
-        <div className="grid sm:grid-cols-2 gap-6 mt-16" data-reveal-group>
+        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mt-16" data-reveal-group>
           {testimonials.slice(1).map((t) => (
             <div
               key={t.name}
               className="bg-surface-elevated border border-border rounded-2xl p-8 text-left"
               data-reveal-item
             >
-              <p className="font-serif text-base sm:text-lg leading-relaxed text-text-muted italic mb-6">
+              <p className="font-serif text-base sm:text-lg lg:text-xl leading-relaxed text-text-muted italic mb-6">
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div className="flex items-center gap-3">

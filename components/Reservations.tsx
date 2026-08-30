@@ -117,7 +117,7 @@ export default function Reservations() {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-3.5 bg-bg border border-border rounded-xl text-text text-sm placeholder-text-dim transition-all duration-200"
+                      className="w-full px-4 py-3.5 min-h-[48px] bg-bg border border-border rounded-xl text-text text-sm placeholder-text-dim transition-all duration-200"
                       placeholder="Your name"
                       autoComplete="name"
                     />
@@ -131,7 +131,7 @@ export default function Reservations() {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-3.5 bg-bg border border-border rounded-xl text-text text-sm placeholder-text-dim transition-all duration-200"
+                      className="w-full px-4 py-3.5 min-h-[48px] bg-bg border border-border rounded-xl text-text text-sm placeholder-text-dim transition-all duration-200"
                       placeholder="your@email.com"
                       autoComplete="email"
                     />
@@ -148,7 +148,7 @@ export default function Reservations() {
                       id="date"
                       name="date"
                       required
-                      className="w-full px-4 py-3.5 bg-bg border border-border rounded-xl text-text text-sm placeholder-text-dim transition-all duration-200"
+                      className="w-full px-4 py-3.5 min-h-[48px] bg-bg border border-border rounded-xl text-text text-sm placeholder-text-dim transition-all duration-200"
                     />
                   </div>
                   <div>
@@ -159,7 +159,7 @@ export default function Reservations() {
                       id="time"
                       name="time"
                       required
-                      className="w-full px-4 py-3.5 bg-bg border border-border rounded-xl text-text text-sm transition-all duration-200 appearance-none cursor-pointer"
+                      className="w-full px-4 py-3.5 min-h-[48px] bg-bg border border-border rounded-xl text-text text-sm transition-all duration-200 appearance-none cursor-pointer"
                     >
                       <option value="">Select time</option>
                       {timeSlots.map((slot) => (
@@ -177,7 +177,7 @@ export default function Reservations() {
                     id="guests"
                     name="guests"
                     required
-                    className="w-full px-4 py-3.5 bg-bg border border-border rounded-xl text-text text-sm transition-all duration-200 appearance-none cursor-pointer"
+                    className="w-full px-4 py-3.5 min-h-[48px] bg-bg border border-border rounded-xl text-text text-sm transition-all duration-200 appearance-none cursor-pointer"
                   >
                     <option value="">Select guests</option>
                     {guestOptions.map((opt, i) => (
@@ -196,14 +196,14 @@ export default function Reservations() {
                     id="requests"
                     name="requests"
                     rows={3}
-                    className="w-full px-4 py-3.5 bg-bg border border-border rounded-xl text-text text-sm placeholder-text-dim transition-all duration-200 resize-none"
+                    className="w-full px-4 py-3.5 min-h-[48px] bg-bg border border-border rounded-xl text-text text-sm placeholder-text-dim transition-all duration-200 resize-none"
                     placeholder="Dietary requirements, allergies, or special occasions..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className={`btn-press w-full px-8 py-4 font-semibold rounded-full transition-all duration-300 hover:shadow-lg text-sm tracking-wide cursor-pointer ${
+                  className={`btn-press w-full sm:w-auto px-8 py-4 font-semibold rounded-full transition-all duration-300 hover:shadow-lg text-sm tracking-wide cursor-pointer ${
                     submitted
                       ? "bg-green-600 text-white hover:bg-green-500 hover:shadow-green-600/20"
                       : "bg-accent text-white hover:bg-accent-hover hover:shadow-accent/25"

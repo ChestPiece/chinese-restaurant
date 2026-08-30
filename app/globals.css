@@ -1,3 +1,4 @@
+/* Golden Dragon — Mobile-First Responsive Polish */
 @import "tailwindcss";
 
 @theme inline {
@@ -285,5 +286,93 @@ html.has-motion [data-image-reveal] {
   html.has-motion [data-reveal-item],
   html.has-motion [data-image-reveal] {
     visibility: visible !important;
+  }
+}
+
+/* === Mobile-First Responsive Utilities === */
+
+/* Touch-friendly tap targets */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Mobile section spacing */
+@media (max-width: 639px) {
+  .section-mobile {
+    padding-top: 4rem; /* 64px */
+    padding-bottom: 4rem;
+    padding-left: 1.25rem; /* 20px */
+    padding-right: 1.25rem;
+  }
+
+  .section-mobile-lg {
+    padding-top: 6rem; /* 96px */
+    padding-bottom: 6rem;
+  }
+}
+
+/* Horizontal scroll with snap for carousels */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.scroll-snap-x::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-snap-start {
+  scroll-snap-align: start;
+}
+
+/* Mobile card styles */
+@media (max-width: 639px) {
+  .card-mobile {
+    min-height: 200px;
+  }
+}
+
+/* Mobile menu backdrop */
+.nav-backdrop-mobile {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Mobile text truncation */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Hero CTA mobile fixed bottom */
+@media (max-width: 639px) {
+  .hero-cta-mobile {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    z-index: 30;
+  }
+}
+
+/* Hide scrollbar for horizontal scroll containers */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Carousel scroll fade edge — hints at more content */
+@media (max-width: 639px) {
+  .scroll-fade-edge {
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
   }
 }

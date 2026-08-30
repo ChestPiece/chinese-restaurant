@@ -71,10 +71,10 @@ export default function Navbar() {
             {/* Logo */}
             <a href="#" className="flex items-center gap-3 group" aria-label="Golden Dragon Home">
               <div className="w-11 h-11 rounded-full bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center shadow-lg shadow-accent/20 group-hover:shadow-accent/30 transition-shadow duration-500">
-                <span className="text-white font-serif text-xl font-bold">龍</span>
+                <span className="text-white font-serif text-lg sm:text-xl lg:text-2xl font-bold">龍</span>
               </div>
               <div className="hidden sm:block">
-                <span className="font-serif text-xl font-semibold tracking-tight text-text">
+                <span className="font-serif text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-text">
                   Golden Dragon
                 </span>
               </div>
@@ -100,15 +100,20 @@ export default function Navbar() {
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button — animated hamburger ↔ X */}
             <button
-              className="md:hidden p-2 text-text-muted hover:text-text transition-colors"
+              className="md:hidden flex items-center justify-center w-11 h-11 -mr-2 text-text-muted hover:text-text transition-colors"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen(!mobileOpen)}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d={mobileOpen ? "M6 6l12 12M6 18L18 6" : "M4 6h16M4 12h16M4 18h16"}
+                  className="transition-all duration-300 ease-out"
+                />
               </svg>
             </button>
           </div>
@@ -116,14 +121,18 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {mobileOpen && (
-        <div ref={menuRef} className="md:hidden bg-bg/95 nav-blur border-t border-border">
-          <div className="px-6 py-8 space-y-5">
+      <div
+        ref={menuRef}
+        className={`md:hidden bg-bg/95 nav-blur border-t border-border transition-all duration-200 ease-out origin-top ${
+          mobileOpen ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0 pointer-events-none"
+        }`}
+      >
+          <div className="px-6 py-8 space-y-2">
             {navLinks.map((link, i) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="block text-lg text-text-muted hover:text-text transition-colors"
+                className="block min-h-[48px] leading-[48px] text-lg text-text-muted hover:text-text transition-colors"
                 onClick={() => setMobileOpen(false)}
                 style={{ animationDelay: `${i * 50}ms` }}
               >
@@ -132,14 +141,13 @@ export default function Navbar() {
             ))}
             <a
               href="#reservations"
-              className="block w-full px-6 py-3 bg-accent text-white text-center font-semibold rounded-full hover:bg-accent-hover transition-colors mt-4"
+              className="block w-full px-6 py-3 bg-accent text-white text-center font-semibold rounded-full hover:bg-accent-hover transition-colors mt-4 min-h-[48px] leading-[48px]"
               onClick={() => setMobileOpen(false)}
             >
               Reserve a Table
             </a>
           </div>
         </div>
-      )}
     </nav>
   );
 }

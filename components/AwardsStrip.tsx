@@ -55,7 +55,7 @@ function AnimatedCounter({ value, suffix, duration = 2000 }: { value: number; su
 
   return (
     <div ref={ref}>
-      <p className="text-4xl sm:text-5xl font-serif font-semibold gold-text" aria-live="polite">
+      <p className="text-2xl sm:text-3xl lg:text-4xl font-serif font-semibold gold-text" aria-live="polite">
         {count}{suffix}
       </p>
     </div>
@@ -67,7 +67,7 @@ export default function AwardsStrip() {
     <section className="py-28 sm:py-36 lg:py-44 px-6 bg-surface/40 border-y border-border">
       <div className="max-w-7xl mx-auto">
         {/* Animated counters */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 mb-24" data-reveal-group>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 mb-24" data-reveal-group>
           {awards.map((award) => (
             <div
               key={award.label}
@@ -88,11 +88,11 @@ export default function AwardsStrip() {
           <p className="text-text-dim text-[11px] font-semibold tracking-[0.3em] uppercase mb-10" data-reveal="fade-up">
             Featured In
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-14" data-reveal="fade-up" data-reveal-delay="0.1">
+          <div className="flex overflow-x-auto scroll-snap-x no-scrollbar sm:flex-wrap items-center sm:justify-center gap-10 sm:gap-14" data-reveal="fade-up" data-reveal-delay="0.1">
             {pressLogos.map((logo) => (
               <div
                 key={logo.name}
-                className="flex items-center gap-2.5 text-text-dim/60 hover:text-text-dim transition-colors duration-300"
+                className="flex items-center gap-2.5 min-w-max scroll-snap-start shrink-0 sm:shrink text-text-dim/60 hover:text-text-dim transition-colors duration-300"
               >
                 <div className="w-9 h-9 rounded-xl bg-surface-elevated border border-border flex items-center justify-center">
                   <span className="font-serif text-sm font-semibold">{logo.initials}</span>
