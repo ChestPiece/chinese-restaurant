@@ -1,0 +1,34 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.17.0
+2 info using node@v24.19.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\Mueez\Desktop\dev\chinese-restaurant-nextjs\.npmrc
+5 silly config load:file:C:\Users\Mueez\.npmrc
+6 silly config load:file:C:\Users\Mueez\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install lenis
+8 verbose argv "install" "lenis" "--cache" "C:\\Users\\Mueez\\Desktop\\dev\\chinese-restaurant-nextjs\\.npm-tmp" "--prefer-offline"
+9 verbose logfile logs-max:10 dir:C:\Users\Mueez\Desktop\dev\chinese-restaurant-nextjs\.npm-tmp\_logs\2026-08-30T16_39_50_450Z-
+10 verbose logfile C:\Users\Mueez\Desktop\dev\chinese-restaurant-nextjs\.npm-tmp\_logs\2026-08-30T16_39_50_450Z-debug-0.log
+11 warn Unknown env config "manage-package-manager-versions". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+12 silly logfile done cleaning log files
+13 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+14 silly idealTree buildDeps
+15 silly fetch manifest lenis@^1.2.3
+16 silly packumentCache full:https://registry.npmjs.org/lenis cache-miss
+17 http fetch GET 200 https://registry.npmjs.org/npm 4778ms
+18 http fetch GET 200 https://registry.npmjs.org/lenis 1847ms (cache miss)
+19 silly packumentCache full:https://registry.npmjs.org/lenis set size:undefined disposed:false
+20 silly fetch manifest @nuxt/kit@>=3.0.0
+21 silly packumentCache full:https://registry.npmjs.org/@nuxt%2fkit cache-miss
+22 http fetch GET 200 https://registry.npmjs.org/@nuxt%2fkit 1830ms (cache miss)
+23 silly packumentCache full:https://registry.npmjs.org/@nuxt%2fkit set size:undefined disposed:false
+24 silly fetch manifest react@19.2.4
+25 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+26 http fetch GET 200 https://registry.npmjs.org/react 16640ms (cache miss)
+27 silly packumentCache full:https://registry.npmjs.org/react set size:undefined disposed:false
+28 silly fetch manifest vue@>=3.0.0
+29 silly packumentCache full:https://registry.npmjs.org/vue cache-miss
+30 http fetch GET 200 https://registry.npmjs.org/vue 4097ms (cache miss)
+31 silly packumentCache full:https://registry.npmjs.org/vue set size:undefined disposed:false
+32 silly fetch manifest typescript@^5
+33 silly packumentCache full:https://registry.npmjs.org/typescript cache-miss

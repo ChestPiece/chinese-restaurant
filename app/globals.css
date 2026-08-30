@@ -1,0 +1,289 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #080808;
+  --color-surface: #121214;
+  --color-surface-elevated: #1a1a1e;
+  --color-surface-hover: #222228;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-strong: rgba(255, 255, 255, 0.1);
+  --color-text: #f5f5f7;
+  --color-text-muted: #98989f;
+  --color-text-dim: #76767a;
+  --color-accent: #c8102e;
+  --color-accent-hover: #e8143a;
+  --color-accent-glow: rgba(200, 16, 46, 0.15);
+  --color-gold: #d4a853;
+  --color-gold-hover: #e5c47a;
+  --color-gold-dim: #a16207;
+
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-montserrat), system-ui, sans-serif;
+}
+
+/* Build Stamp: Golden Dragon | Cinematic-Dark | Crimson+Gold | Lenis+GSAP | $10K Build */
+
+/* ── Base ───────────────────────────────────────────── */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  background-color: #080808;
+  color: #f5f5f7;
+  overflow-x: hidden;
+}
+
+/* Lenis overrides */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* ── Selection ──────────────────────────────────────── */
+::selection {
+  background-color: rgba(200, 16, 46, 0.3);
+  color: #f5f5f7;
+}
+
+/* ── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-thumb { background: #222228; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a40; }
+
+/* ── Grain texture overlay ──────────────────────────── */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.02;
+  z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Hero gradient overlay ──────────────────────────── */
+.hero-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(8,8,8,0.55) 0%,
+    rgba(8,8,8,0.25) 20%,
+    rgba(8,8,8,0.15) 40%,
+    rgba(8,8,8,0.35) 60%,
+    rgba(8,8,8,0.88) 85%,
+    rgba(8,8,8,1) 100%
+  );
+}
+
+/* ── Gold gradient text ─────────────────────────────── */
+.gold-text {
+  background: linear-gradient(135deg, #d4a853 0%, #e5c47a 40%, #d4a853 70%, #c8a04a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Crimson gradient text ──────────────────────────── */
+.crimson-text {
+  background: linear-gradient(135deg, #c8102e 0%, #e8143a 50%, #c8102e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Hero text shadow ──────────────────────────────── */
+.hero-heading-shadow {
+  text-shadow: 0 2px 24px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* ── Footer crimson surface ────────────────────────── */
+.footer-surface {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(200,16,46,0.12) 0%, transparent 70%),
+    linear-gradient(180deg, #0e0809 0%, #130a0c 40%, #180c0e 100%);
+}
+
+/* ── Stat card ─────────────────────────────────────── */
+.stat-card {
+  background: linear-gradient(145deg, rgba(26,26,30,0.8), rgba(18,18,20,0.9));
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+}
+
+/* ── Button press ──────────────────────────────────── */
+.btn-press {
+  will-change: transform;
+  transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+/* ── Card hover lift ────────────────────────────────── */
+.card-lift {
+  transition: transform 0.6s cubic-bezier(0.32, 0.72, 0, 1),
+              box-shadow 0.6s cubic-bezier(0.32, 0.72, 0, 1),
+              border-color 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -12px rgba(0,0,0,0.5),
+              0 0 0 1px rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.08);
+}
+
+/* ── Image zoom on hover ────────────────────────────── */
+.img-zoom {
+  transition: transform 0.8s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.img-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* ── Nav blur ───────────────────────────────────────── */
+.nav-blur {
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+}
+
+/* ── Decorative line ────────────────────────────────── */
+.deco-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d4a853, transparent);
+}
+
+/* ── Section divider ────────────────────────────────── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
+}
+
+/* ── Form focus ─────────────────────────────────────── */
+input:focus, select:focus, textarea:focus {
+  border-color: #d4a853;
+}
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #d4a853;
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+/* ── Global focus-visible ───────────────────────────── */
+:focus-visible {
+  outline: 2px solid #d4a853;
+  outline-offset: 2px;
+}
+
+/* ── Screen-reader only ─────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Skip link ──────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link:focus-visible {
+  position: fixed;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  z-index: 100;
+  top: 1rem;
+  left: 1rem;
+  background: #c8102e;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+/* ── Motion text masks (for GSAP word/line reveals) ─── */
+html.has-motion [data-motion-text],
+html.has-motion [data-reveal],
+html.has-motion [data-reveal-item],
+html.has-motion [data-image-reveal] {
+  visibility: hidden;
+}
+
+.motion-line-mask,
+.motion-word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.motion-line,
+.motion-word {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+/* ── Image reveal clip ──────────────────────────────── */
+[data-image-reveal] {
+  overflow: hidden;
+}
+
+[data-parallax-image] {
+  display: block;
+  width: 100%;
+  height: 115%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+/* ── Particle canvas ────────────────────────────────── */
+.particle-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ── Reduced motion ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+  html.has-motion [data-motion-text],
+  html.has-motion [data-reveal],
+  html.has-motion [data-reveal-item],
+  html.has-motion [data-image-reveal] {
+    visibility: visible !important;
+  }
+}
