@@ -6,9 +6,9 @@ export default function ChefSpotlight() {
   return (
     <section id="chef" aria-labelledby="chef-heading" className="py-28 sm:py-36 lg:py-44 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center min-w-0">
           {/* Content */}
-          <div className="order-2 lg:order-1 text-center sm:text-left">
+          <div className="order-2 lg:order-1 min-w-0 text-center sm:text-left">
             <p className="text-accent text-[11px] font-semibold tracking-[0.3em] uppercase mb-5" data-reveal="fade-up">
               The Chef
             </p>
@@ -49,7 +49,7 @@ export default function ChefSpotlight() {
 
           {/* Image with clip-path reveal */}
           <div className="order-1 lg:order-2 relative mx-auto sm:mx-0" data-reveal="slide-left">
-            <div className="relative w-32 h-32 sm:w-48 sm:h-48 lg:w-auto lg:h-auto lg:aspect-[3/4] rounded-[1.5rem] overflow-hidden" data-image-reveal>
+            <div className="relative w-56 h-72 sm:w-48 sm:h-48 lg:w-full lg:aspect-[3/4] rounded-[1.5rem] overflow-hidden" data-image-reveal>
               <Image
                 src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80&auto=format"
                 alt="Chef Chen Wei in the kitchen"

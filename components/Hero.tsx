@@ -48,7 +48,7 @@ export default function Hero() {
         <div className="deco-line mx-auto my-8" data-reveal="fade-up" data-reveal-delay="0.2" aria-hidden="true" />
 
         <div className="overflow-hidden mb-12" data-reveal="fade-up" data-reveal-delay="0.3">
-          <p className="text-sm sm:text-base lg:text-lg text-text-white font-light max-w-2xl mx-auto leading-relaxed" style={{ textShadow: "0 1px 12px rgba(0,0,0,0.5)" }}>
+          <p className="text-sm sm:text-base lg:text-lg text-white/90 font-light max-w-2xl mx-auto leading-relaxed" style={{ textShadow: "0 1px 12px rgba(0,0,0,0.5)" }}>
             Where tradition meets elegance. Multi-regional Chinese cuisine crafted
             from five generations of culinary heritage.
           </p>

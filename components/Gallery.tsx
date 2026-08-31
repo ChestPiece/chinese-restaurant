@@ -38,7 +38,7 @@ const images = [
 export default function Gallery() {
   return (
     <section id="gallery" aria-labelledby="gallery-heading" className="py-28 sm:py-36 lg:py-44 px-6">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto min-w-0">
         {/* Section Header */}
         <div className="text-center mb-20 lg:mb-24">
           <p className="text-accent text-[11px] font-semibold tracking-[0.3em] uppercase mb-5" data-reveal="fade-up">
@@ -54,10 +54,10 @@ export default function Gallery() {
           {images.map((img) => (
             <div
               key={img.src}
-              className={`relative min-w-[85vw] sm:min-w-0 scroll-snap-start rounded-2xl overflow-hidden ${img.className} ${img.aspect}`}
+              className={`relative shrink-0 min-w-[85vw] sm:min-w-0 scroll-snap-start rounded-2xl overflow-hidden ${img.className} ${img.aspect}`}
               data-reveal-item
             >
-              <div data-image-reveal className="w-full h-full">
+              <div data-image-reveal className="relative w-full h-full">
                 <Image
                   src={img.src}
                   alt={img.alt}

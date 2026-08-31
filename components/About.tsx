@@ -9,19 +9,22 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image with clip-path reveal */}
           <div className="relative" data-reveal="slide-right">
-            <div className="relative aspect-[4/5] rounded-[1.5rem] overflow-hidden" data-image-reveal>
+            <div
+              className="relative aspect-[4/5] rounded-[1.5rem] overflow-hidden"
+              data-image-reveal
+              data-parallax-image
+              data-parallax-speed="0.1"
+            >
               <Image
                 src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80&auto=format"
                 alt="Elegant restaurant interior with warm ambient lighting"
                 fill
                 className="object-cover img-zoom"
-                data-parallax-image
-                data-parallax-speed="0.1"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            {/* Floating stat card — double bezel */}
-            <div className="absolute -bottom-8 -right-2 sm:right-8 bg-surface-elevated border border-border-strong rounded-2xl p-6 shadow-2xl" data-reveal="scale" data-reveal-delay="0.3">
+            {/* Floating stat card — inline on mobile, absolute on sm+ */}
+            <div className="max-sm:static max-sm:mt-6 max-sm:mx-auto max-sm:w-fit absolute -bottom-8 -right-2 sm:right-8 bg-surface-elevated border border-border-strong rounded-2xl p-6 shadow-2xl" data-reveal="scale" data-reveal-delay="0.3">
               <p className="text-4xl font-serif font-semibold gold-text">40+</p>
               <p className="text-xs text-text-dim mt-1.5 font-medium tracking-wider uppercase">
                 Years of Excellence

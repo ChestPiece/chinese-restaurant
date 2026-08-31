@@ -60,7 +60,7 @@ export default function Reservations() {
               booking at least 48 hours in advance for weekend dining.
             </p>
 
-            <div className="space-y-8" data-reveal-group>
+            <div className="space-y-8">
               <ContactItem
                 title="Location"
                 icon={

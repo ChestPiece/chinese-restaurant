@@ -138,7 +138,7 @@ function RegularDish({ dish }: { dish: (typeof dishes)[0] }) {
 export default function Menu() {
   return (
     <section id="menu" aria-labelledby="menu-heading" className="py-28 sm:py-36 lg:py-44 px-6 bg-surface/40">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto min-w-0">
         {/* Section Header */}
         <div className="text-center mb-20 lg:mb-24">
           <p className="text-accent text-[11px] font-semibold tracking-[0.3em] uppercase mb-5" data-reveal="fade-up">
@@ -150,7 +150,7 @@ export default function Menu() {
         </div>
 
         {/* Menu Grid — horizontal scroll on mobile, grid on desktop */}
-        <div className="flex overflow-x-auto scroll-snap-x no-scrollbar sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7 pb-4 sm:pb-0 -mx-6 px-6 sm:mx-0 sm:px-0 scroll-fade-edge" data-reveal-group>
+        <div className="flex overflow-x-auto scroll-snap-x no-scrollbar sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7 pb-4 sm:pb-0 -mx-6 px-6 sm:mx-0 sm:px-0 scroll-fade-edge">
           {dishes.map((dish) =>
             dish.featured ? (
               <FeaturedDish key={dish.name} dish={dish} />

@@ -269,6 +269,7 @@ const revealPresets: Record<string, { from: gsap.TweenVars; to: gsap.TweenVars }
 function initScrollReveals() {
   gsap.utils.toArray<HTMLElement>("[data-reveal-group]").forEach((group) => {
     const items = group.querySelectorAll("[data-reveal-item]");
+    if (!items.length) return;
     gsap.set(group, { visibility: "visible" });
     gsap.fromTo(
       items,
@@ -322,8 +323,10 @@ function initImageReveals() {
 
 function initParallax() {
   gsap.utils.toArray<HTMLElement>("[data-parallax-image], [data-parallax-layer]").forEach((layer) => {
+    if (layer.tagName === "IMG") return;
     const speed = Number(layer.dataset.parallaxSpeed || 0.18);
-    const section = layer.closest("[data-parallax-section]") || layer;
+    const section = layer.closest("[data-parallax-section]") || layer.closest("[data-image-reveal]") || layer.parentElement;
+    if (!section) return;
 
     gsap.to(layer, {
       y: () => window.innerHeight * speed * -1,
